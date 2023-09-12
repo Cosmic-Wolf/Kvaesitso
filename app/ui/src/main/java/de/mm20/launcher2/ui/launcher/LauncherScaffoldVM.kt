@@ -88,11 +88,22 @@ class LauncherScaffoldVM : ViewModel(), KoinComponent {
         if (searchBarFocused.value != focused) searchBarFocused.value = focused
     }
 
+    fun vibrateDevice(context: Context, dur: Int) {
+    val vibrator = getSystemService(context, Vibrator::class.java)
+        vibrator?.let {
+            if (Build.VERSION.SDK_INT >= 26) {
+                it.vibrate(VibrationEffect.createOneShot(100, VibrationEffect.DEFAULT_AMPLITUDE))
+            } else {
+                @Suppress("DEPRECATION")
+                it.vibrate(dur)
+            }
+        }
+    }
+
     fun openSearch() {
         if (isSearchOpen.value == true) return
         isSearchOpen.value = true
-        Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-        v.vibrate(40);
+        vibrateDevice(40);
         viewModelScope.launch {
             if (autoFocusSearch.first()) setSearchbarFocus(true)
         }
@@ -101,8 +112,7 @@ class LauncherScaffoldVM : ViewModel(), KoinComponent {
     fun closeSearch() {
         if (!isSearchOpen.value) return
         isSearchOpen.value = false
-        Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-        v.vibrate(40);
+        vibrateDevice(40);
         setSearchbarFocus(false)
     }
 
