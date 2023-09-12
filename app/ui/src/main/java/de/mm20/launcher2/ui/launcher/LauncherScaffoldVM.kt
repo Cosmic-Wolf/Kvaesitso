@@ -91,6 +91,8 @@ class LauncherScaffoldVM : ViewModel(), KoinComponent {
     fun openSearch() {
         if (isSearchOpen.value == true) return
         isSearchOpen.value = true
+        Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        v.vibrate(40);
         viewModelScope.launch {
             if (autoFocusSearch.first()) setSearchbarFocus(true)
         }
