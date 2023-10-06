@@ -24,6 +24,7 @@
     <!-- Shown in a snackbar after an item has been hidden. %1$s: label of the item -->
     <string name="msg_item_hidden">%1$s has been hidden.</string>
     <string name="action_undo">Undo</string>
+    <string name="action_import">Import</string>
     <!-- Delete something (a file or a web search shortcut) -->
     <string name="menu_delete">Delete</string>
     <string name="menu_remove">Remove</string>
@@ -145,6 +146,8 @@
     <string name="file_type_form">Form</string>
     <!-- Launcher backup, %1$s: app name -->
     <string name="file_type_launcherbackup">%1$s backup</string>
+    <!-- Launcher theme, %1$s: app name -->
+    <string name="file_type_launchertheme">%1$s theme</string>
     <!-- Generic file , %1$s is the file extension -->
     <string name="file_type_generic">%1$s file</string>
     <!-- Warning message that is shown when a user attempts to delete a directory -->
@@ -532,6 +535,7 @@
     <string name="preference_blur_wallpaper">Blur wallpaper</string>
     <string name="preference_blur_wallpaper_summary">Use a blur effect on the wallpaper</string>
     <string name="preference_blur_wallpaper_unsupported">Not supported on this device</string>
+    <string name="preference_blur_wallpaper_radius">Blur radius</string>
     <string name="preference_wallpaper_summary">Choose a wallpaper</string>
     <string name="preference_category_badges">Badges</string>
     <string name="preference_screen_badges_summary">Configure icon badges</string>
@@ -836,4 +840,6 @@
     <string name="theme_color_scheme_palette_color">Palette</string>
     <string name="theme_color_scheme_custom_color">Custom</string>
     <string name="preference_restore_default">Restore default</string>
+    <string name="import_theme_apply">Apply theme</string>
+    <string name="import_theme_error">The selected file could not be read. Please make sure that you selected a valid theme file (*.kvtheme), and that the file is not corrupt.</string>
 </resources>
